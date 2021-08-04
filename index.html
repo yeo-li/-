@@ -9,20 +9,28 @@
 <body>
     <h1>행동의 수치화</h1>
     <script>
+        var name = prompt("행동의 이름", "성열아 그만 놀자");
         var R = prompt("보상(R)", "1");
         var F = prompt("강제성(F)", "1");
         var T = prompt("시간(T)", "1");
         var C = prompt("복잡성(C)", "1");
+        R = Number(R);
+        F = Number(F);
+        T = Number(T);
+        C = Number(C);
 
         var H = (R+F)/(T+C);
         var S = H/(H+1);
 
         if(S>0.5){
-            document.write("<h2>행동함<h2>");
+            document.write("<h2>",name ,"을(를) 행동함</h2>");
+            document.write("<h3>행동의 동기력: ", S*100, "%</h3>");
         } else{
-            document.write("<h2>행동하지 않음<h2><br>");
-            
-            document.write("<h3>stress: ", S*100, "%<h3>");
+            document.write("<h2>",name ,"을(를) 행동하지 않음</h2><br>");
+           
+            document.write("<h3>H = ", H,"</h3>");
+            document.write("<h3>S = ", S,"</h3>");
+            document.write("<h3>stress: ", S*200, "%</h3>");
         }
     </script>
 
