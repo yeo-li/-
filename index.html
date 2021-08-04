@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>행동의 객관화</title>
+</head>
+<body>
+    <h1>행동의 수치화</h1>
+    <script>
+        var R = prompt("보상(R)", "1");
+        var F = prompt("강제성(F)", "1");
+        var T = prompt("시간(T)", "1");
+        var C = prompt("복잡성(C)", "1");
+
+        var H = (R+F)/(T+C);
+        var S = H/(H+1);
+
+        if(S>0.5){
+            document.write("<h2>행동함<h2>");
+        } else{
+            document.write("<h2>행동하지 않음<h2><br>");
+            
+            document.write("<h3>stress: ", S*100, "%<h3>");
+        }
+    </script>
+
+</body>
+</html>
