@@ -7,7 +7,7 @@
     <title>행동의 객관화</title>
 </head>
 <body>
-    <h1>행동의 수치화</h1>
+    <h1><행동의 수치화></h1>
     <script>
         var name = prompt("행동의 이름", "성열아 그만 놀자");
         var R = prompt("보상(R)", "1");
@@ -27,10 +27,25 @@
             document.write("<h3>행동의 동기력: ", S*100, "%</h3>");
         } else{
             document.write("<h2>",name ,"을(를) 행동하지 않음</h2><br>");
-           
-            document.write("<h3>H = ", H,"</h3>");
-            document.write("<h3>S = ", S,"</h3>");
-            document.write("<h3>비행동 불쾌지수: ", S*200, "%</h3>");
+            if(R<F){
+                document.write("<h3>보상을 늘릴것</h3>");
+            } else if(F<R){
+                document.write("<h3>강제성을 높일것</h3>");
+            }else{
+                document.write("<h3>보상을 늘릴것</h3>");
+                document.write("<h3>강제성을 높일것</h3>");
+            }
+
+            if(T>C){
+                document.write("<h3>데드라인을 줄일것</h3>");
+            } else if(C<T){
+                document.write("<h3>계획을 세분화해 복잡성을 줄일것</h3>");
+            } else{
+                document.write("<h3>데드라인을 줄일것</h3>");
+                document.write("<h3>계획을 세분화해 복잡성을 줄일것</h3>");
+            }
+
+            document.write("<h3>행동저항: ", S*200, "%</h3>");
         }
     </script>
 
